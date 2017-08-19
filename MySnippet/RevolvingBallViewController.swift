@@ -9,18 +9,19 @@
 import UIKit
 
 class RevolvingBallViewController: UIViewController {
-    @IBOutlet weak var ball: UIView!
+    @IBOutlet weak var sun: UIImageView!
+    @IBOutlet weak var earth: UIImageView!
+    @IBOutlet weak var venus: UIImageView!
+    @IBOutlet weak var mercury: UIImageView!
+    @IBOutlet weak var martian: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        makeACircle()
-        addAnimation()
+        mercury.addReVolvingAnimation(radius: 70, duration: 7)
+        venus.addReVolvingAnimation(radius: 100, duration: 10)
+        earth.addReVolvingAnimation(radius: 140, duration: 12)
+        martian.addReVolvingAnimation(radius: 220, duration: 8)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +29,50 @@ class RevolvingBallViewController: UIViewController {
 
     }
 
+    /*
     func makeACircle() {
         ball.layer.cornerRadius = ball.bounds.size.width / 2
         ball.layer.masksToBounds = true
     }
+    */
     
-    func addAnimation() {
-        /// Add circling ball animation
+    /*
+    func addAnimation(view: UIView) {
         let orbit = CAKeyframeAnimation(keyPath: "position")
-        var affineTransform = CGAffineTransform(rotationAngle: 0.0)
-        affineTransform = affineTransform.rotated(by: CGFloat(Double.pi))
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 0,y: 0), radius:  CGFloat(50), startAngle: CGFloat(0), endAngle:CGFloat(Double.pi * 2), clockwise: false)
+        
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 0,y: 0),
+                                      radius:  CGFloat(150),
+                                      startAngle: CGFloat(0),
+                                      endAngle:CGFloat(Double.pi * 2), clockwise: false)
+        
         orbit.path = circlePath.cgPath
-        orbit.duration = 6
+        orbit.duration = 5
         orbit.isAdditive = true
         orbit.repeatCount = 100
         orbit.calculationMode = kCAAnimationPaced
         orbit.rotationMode = kCAAnimationRotateAuto
         
-        ball.layer.add(orbit, forKey: "orbit")
+        view.layer.add(orbit, forKey: "orbit")
+    }
+     */
+}
+
+extension UIImageView {
+    func addReVolvingAnimation(radius: Float, duration: CFTimeInterval) {
+        let orbit = CAKeyframeAnimation(keyPath: "position")
+        
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: 0,y: 0),
+                                      radius:  CGFloat(radius),
+                                      startAngle: CGFloat(0),
+                                      endAngle:CGFloat(Double.pi * 2), clockwise: false)
+        
+        orbit.path = circlePath.cgPath
+        orbit.duration = duration
+        orbit.isAdditive = true
+        orbit.repeatCount = 100
+        orbit.calculationMode = kCAAnimationPaced
+        orbit.rotationMode = kCAAnimationRotateAuto
+        
+        self.layer.add(orbit, forKey: "orbit")
     }
 }

@@ -49,17 +49,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Snippet" id="fK3-2Q-CBx"/>
                     <connections>
-                        <segue destination="BsI-mc-Ey6" kind="showDetail" id="cKy-1t-gs0"/>
+                        <segue destination="BsI-mc-Ey6" kind="show" identifier="revolvingBall" id="9a6-hD-HXm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GcR-aW-n1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-847.20000000000005" y="-13.043478260869566"/>
         </scene>
-        <!--Revolving Ball View Controller-->
+        <!--Solar system-->
         <scene sceneID="hO9-Ke-gvg">
             <objects>
-                <viewController id="BsI-mc-Ey6" customClass="RevolvingBallViewController" customModule="MySnippet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Solar system" id="BsI-mc-Ey6" customClass="RevolvingBallViewController" customModule="MySnippet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jsQ-Cl-ui1"/>
                         <viewControllerLayoutGuide type="bottom" id="hkI-Bz-IYb"/>
@@ -68,28 +68,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrJ-kV-pVj">
-                                <rect key="frame" x="172" y="318.5" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="martian" translatesAutoresizingMaskIntoConstraints="NO" id="TlP-V1-0TP">
+                                <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="6fm-mP-3gJ"/>
-                                    <constraint firstAttribute="height" constant="30" id="po5-sR-8M1"/>
+                                    <constraint firstAttribute="height" constant="30" id="Zr8-FH-2MK"/>
+                                    <constraint firstAttribute="width" constant="30" id="aRp-PF-Z7T"/>
                                 </constraints>
-                            </view>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="PWh-qh-e1t">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="55b-mH-kBn"/>
+                                    <constraint firstAttribute="width" constant="100" id="oZx-FV-8tO"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="venus" translatesAutoresizingMaskIntoConstraints="NO" id="E3k-l8-uX6">
+                                <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="QaN-3y-ajV"/>
+                                    <constraint firstAttribute="height" constant="30" id="RXT-kQ-JJA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth" translatesAutoresizingMaskIntoConstraints="NO" id="TDK-Hg-AOp">
+                                <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="B6Z-8W-j7k"/>
+                                    <constraint firstAttribute="width" constant="40" id="fc6-wc-xRa"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mercury" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-qQ-Tvd">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="QsK-jt-yMD"/>
+                                    <constraint firstAttribute="height" constant="20" id="gfe-Nf-Nhr"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.066336147487163544" green="0.15746378898620605" blue="0.24232637882232666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xrJ-kV-pVj" firstAttribute="centerX" secondItem="hwN-sL-YG4" secondAttribute="centerX" id="Ww6-aK-yIx"/>
-                            <constraint firstItem="xrJ-kV-pVj" firstAttribute="centerY" secondItem="hwN-sL-YG4" secondAttribute="centerY" id="pOw-kH-Wyw"/>
+                            <constraint firstItem="PWh-qh-e1t" firstAttribute="centerY" secondItem="hwN-sL-YG4" secondAttribute="centerY" id="Ly8-zq-sq7"/>
+                            <constraint firstItem="TDK-Hg-AOp" firstAttribute="centerY" secondItem="hwN-sL-YG4" secondAttribute="centerY" id="WBO-OZ-LIa"/>
+                            <constraint firstItem="TlP-V1-0TP" firstAttribute="centerY" secondItem="hwN-sL-YG4" secondAttribute="centerY" id="cPh-kK-ajU"/>
+                            <constraint firstItem="TlP-V1-0TP" firstAttribute="centerX" secondItem="hwN-sL-YG4" secondAttribute="centerX" id="kji-Tn-x3J"/>
+                            <constraint firstItem="E3k-l8-uX6" firstAttribute="centerX" secondItem="hwN-sL-YG4" secondAttribute="centerX" id="n8t-Md-bjZ"/>
+                            <constraint firstItem="PWh-qh-e1t" firstAttribute="centerX" secondItem="hwN-sL-YG4" secondAttribute="centerX" id="sNk-da-b1x"/>
+                            <constraint firstItem="TDK-Hg-AOp" firstAttribute="centerX" secondItem="hwN-sL-YG4" secondAttribute="centerX" id="ukW-ag-kFd"/>
+                            <constraint firstItem="Tap-qQ-Tvd" firstAttribute="centerX" secondItem="hwN-sL-YG4" secondAttribute="centerX" id="xsT-dT-K9V"/>
+                            <constraint firstItem="E3k-l8-uX6" firstAttribute="centerY" secondItem="hwN-sL-YG4" secondAttribute="centerY" id="xym-NK-Ilp"/>
+                            <constraint firstItem="Tap-qQ-Tvd" firstAttribute="centerY" secondItem="hwN-sL-YG4" secondAttribute="centerY" id="ygR-1N-mWP"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ball" destination="xrJ-kV-pVj" id="qzr-Cx-4wk"/>
+                        <outlet property="earth" destination="TDK-Hg-AOp" id="5TG-ch-m4U"/>
+                        <outlet property="martian" destination="TlP-V1-0TP" id="gbX-Vd-uQa"/>
+                        <outlet property="mercury" destination="Tap-qQ-Tvd" id="f3z-Ik-QAJ"/>
+                        <outlet property="sun" destination="PWh-qh-e1t" id="zFa-Sc-YXf"/>
+                        <outlet property="venus" destination="E3k-l8-uX6" id="adb-Da-PL0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6J-tb-BRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14" y="-736"/>
+            <point key="canvasLocation" x="-15.199999999999999" y="-736.28185907046486"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eGW-ar-h4Q">
@@ -108,4 +147,11 @@
             <point key="canvasLocation" x="-1730" y="-13"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Earth" width="800" height="790"/>
+        <image name="martian" width="600" height="600"/>
+        <image name="mercury" width="600" height="600"/>
+        <image name="sun" width="547" height="558"/>
+        <image name="venus" width="250" height="250"/>
+    </resources>
 </document>

@@ -17,12 +17,12 @@ class TableViewController: UITableViewController {
     let cellIdentifier:String = "tableCell"
     
     let section = [
-        "UI"
+        "UI",
     ]
     
     let content = [
         [
-            "revolving ball"
+            "revolvingBall",
         ]
     ]
     
@@ -56,12 +56,15 @@ class TableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let segue = content[indexPath.section][indexPath.row]
+        performSegue(withIdentifier: segue, sender: self)
+    }
 
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        /// Do nothing.
     }
-
-
 }
